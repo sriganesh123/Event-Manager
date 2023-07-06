@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Email</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <style>
+        body {
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" action="/table3/email">
+        <label for="email" class="label">Target Email:</label><br>
+        <input type="email" id="email" name="email" class="input" required><br>
+        {% for id in ids %}
+		<input type="hidden" name="ids[]" value="{{ id }}">
+		{% endfor %}
+        <input type="submit" value="Send" class="button is-primary mt-2">
+    </form>
+</body>
+</html>

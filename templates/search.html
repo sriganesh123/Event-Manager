@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your App - Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <style>
+        body {
+            background-color: #363636;
+            color: #f5f5f5;
+        }
+        .input {
+            background-color: #494949;
+            color: #f5f5f5;
+            border-color: #f5f5f5;
+        }
+        ::placeholder {
+            color: #f5f5f5;
+            opacity: 1; /* Firefox */
+        }
+        .button {
+            color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title has-text-light">Search</h1>
+            <a href="/" class="button is-light">Go Back</a>
+            <form method="POST" action="/search">
+                <div class="field">
+                    <label class="label" for="query">Search:</label>
+                    <div class="control">
+                        <input class="input" type="text" id="query" name="query" placeholder="Enter your search query here...">
+                    </div>
+                </div>
+                <div class="control">
+                    <input class="button is-link" type="submit" value="Search">
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

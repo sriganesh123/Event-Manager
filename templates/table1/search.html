@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your App - Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;700&display=swap');
+
+        body {
+            background: #222;
+            color: #fff;
+            font-family: 'IBM Plex Mono', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            max-width: 700px;
+            padding: 20px;
+        }
+
+        h1.title {
+            font-weight: 700;
+            text-align: center;
+            overflow: hidden;
+            border-right: .15em solid orange; 
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: typing 4.5s steps(40, end),
+                       blink-caret 1s step-end infinite;
+            color: #fff; /* Set the text color to white */
+        }
+
+        @keyframes typing {
+          from { width: 0 }
+          to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+          from, to { border-color: transparent }
+          50% { border-color: orange; }
+        }
+
+        .input {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            padding: 15px;
+        }
+
+        ::placeholder {
+            color: #bbb;
+        }
+
+        .button {
+            background-color: #ff4500;
+            color: #fff;
+            border-radius: 25px;
+            padding: 10px 25px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+        }
+
+        .button:hover {
+            background-color: #ff5722;
+        }
+
+        .button:active {
+            animation: clickScale 0.3s forwards;
+        }
+
+        @keyframes clickScale {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <section class="section">
+            <h1 class="title">
+                <i class="fas fa-search" style="color: #fff; margin-right: 10px;"></i>
+                Search
+            </h1>
+            <a href="/table1" class="button is-light" style="color: #000;">Go Back</a>
+            <form method="POST" action="/table1/search" style="margin-top:20px;">
+                <div class="field">
+                    <label class="label" for="query" style="color: #fff;">Enter your Ticket number...:</label>
+                    <div class="control">
+                        <input class="input" type="text" id="query" name="query" placeholder="Enter your Ticket number..." style="color: #fff;">
+                    </div>
+                </div>
+                <div class="control">
+                    <input class="button is-primary" type="submit" value="Search">
+                </div>
+            </form>
+        </section>
+    </div>
+</body>
+
+</html>
